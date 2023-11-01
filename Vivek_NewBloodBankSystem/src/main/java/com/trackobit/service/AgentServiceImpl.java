@@ -75,9 +75,9 @@ public class AgentServiceImpl implements AgentService {
         if (userHistory.isEmpty()) {
             throw new UserException("History is empty from the Agent with id: " + id + " donate or receive to see history");
         } else {
-            for (Request r : userHistory) {
-                if (r.getId() == id) {
-                    history.add(serviceHelper.convertRequestToRequestDTO(r));
+            for (Request request : userHistory) {
+                if (request.getId() == id) {
+                    history.add(serviceHelper.convertRequestToRequestDTO(request));
                 }
             }
         }
