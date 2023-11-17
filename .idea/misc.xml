@@ -4,7 +4,9 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Abhinav_Sh/bloodbank_cloned/pom.xml" />
+        <option value="$PROJECT_DIR$/Vivek_NewBloodBankSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/Vivek_Blood_Bank_With_H2_SB/pom.xml" />
       </list>
     </option>
   </component>
