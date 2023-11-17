@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
-@RequestMapping("/agent")
+@RequestMapping("/com/BloodBank/v1/agent")
 @Controller
 public class AgentController {
     @Autowired

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-@RequestMapping("/agentuser")
+@RequestMapping("/com/BloodBank/v1/agentuser")
 @Controller
 public class AgentUserController {
 
@@ -38,7 +38,7 @@ public class AgentUserController {
             }
             else{
                 session.setAttribute("request",requestDTO);
-                return "redirect:/agentuser/dashboard";
+                return "redirect:/com/BloodBank/v1/agentuser/dashboard";
             }
 
         }
@@ -51,7 +51,7 @@ public class AgentUserController {
     @PostMapping("changepassword/{email}")
     public String showResetPasswordForm(@RequestParam String password,@PathVariable String email){
         agentUserService.changePassword(email,password);
-        return "redirect:/agentuser/login";
+        return "redirect:/com/BloodBank/v1/agentuser/login";
     }
 
     @GetMapping("dashboard")

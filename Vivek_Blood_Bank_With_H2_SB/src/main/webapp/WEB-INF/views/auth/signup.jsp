@@ -49,7 +49,7 @@
     <div class="container">
         <h2>Signup Form</h2>
 
-        <form action="${pageContext.request.contextPath}/auth/signup" method="post">
+        <form action="/com/BloodBank/v1/auth/signup" method="post">
 
 
            <label for="firstName">First Name:</label>

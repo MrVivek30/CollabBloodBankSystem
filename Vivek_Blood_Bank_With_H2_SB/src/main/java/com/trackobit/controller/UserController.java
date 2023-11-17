@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/com/BloodBank/v1/user")
 public class UserController {
     @Autowired
     UserService userService;

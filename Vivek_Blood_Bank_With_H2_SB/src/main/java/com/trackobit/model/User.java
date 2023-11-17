@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Past;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,8 +26,8 @@ public class User {
 
     private String lastName;
 
-
-    private String dob;
+@Past(message = "date should be in past")
+    private LocalDate dob;
 
 
     private String email;

@@ -60,11 +60,11 @@
         <h2> Successfully Done!</h2>
           <p>${message}</p>
 
-        <p>Redirecting to <a href="/com/BloodBank/v1//index.jsp">Home Page</a>...</p>
+        <p>Redirecting to <a href="/com/BloodBank/v1/index">Home Page</a>...</p>
     </div>
     <script>
         setTimeout(function() {
-            window.location.href = "/com/BloodBank/v1/index.jsp";
+            window.location.href = "/com/BloodBank/v1/index";
         }, 2000);
     </script>
 </body>

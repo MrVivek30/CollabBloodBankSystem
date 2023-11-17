@@ -47,7 +47,7 @@
 <body>
     <div class="container">
         <h2>Forget Password Form</h2>
-        <form action="forgetpassword" method="post">
+        <form action="/com/BloodBank/v1/auth/forgetpassword" method="post">
             <label for="email">Email:</label>
              <input type="email" id="email" name="email" required value="${not empty param.email ? param.email : ''}"><br>
 
@@ -64,7 +64,7 @@
             <p style="color: green;">${message}</p>
         </c:if>
         <div class="register-btn">
-              <p><a href="/com/BloodBank/v1/">Home</a></p>
+              <p><a href="/com/BloodBank/v1/index">Home</a></p>
         </div>
     </div>
 </body>

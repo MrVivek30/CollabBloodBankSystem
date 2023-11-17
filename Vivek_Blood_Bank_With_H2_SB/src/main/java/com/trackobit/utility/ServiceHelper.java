@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,7 +35,7 @@ public class ServiceHelper {
             userDTO.setEmail(user.getEmail());
             userDTO.setFirstName(user.getFirstName());
             userDTO.setLastName(user.getLastName());
-            userDTO.setDob(String.valueOf(LocalDate.parse(user.getDob())));
+            userDTO.setDob(String.valueOf(user.getDob()));
             userDTO.setPassword(user.getPassword());
             userDTO.setBloodGroup(user.getBloodGroup());
             userDTO.setRole(user.getRole());
@@ -57,7 +58,7 @@ public class ServiceHelper {
         userDTO.setEmail(user.getEmail());
         userDTO.setFirstName(user.getFirstName());
         userDTO.setLastName(user.getLastName());
-        userDTO.setDob(String.valueOf(LocalDate.parse(user.getDob())));
+        userDTO.setDob(String.valueOf(user.getDob()));
         userDTO.setPassword(user.getPassword());
         userDTO.setBloodGroup(user.getBloodGroup());
         userDTO.setRole(user.getRole());
@@ -132,7 +133,7 @@ public class ServiceHelper {
             user.setEmail(userDTO.getEmail());
             user.setFirstName(userDTO.getFirstName());
             user.setLastName(userDTO.getLastName());
-            user.setDob(String.valueOf(userDTO.getDob()));
+            user.setDob(LocalDate.parse(userDTO.getDob()));
             user.setPassword(userDTO.getPassword());
             user.setBloodGroup(userDTO.getBloodGroup());
             user.setRole(userDTO.getRole());
@@ -153,7 +154,7 @@ public class ServiceHelper {
         user.setEmail(userDTO.getEmail());
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
-        user.setDob(String.valueOf(userDTO.getDob()));
+        user.setDob(LocalDate.parse(userDTO.getDob()));
         user.setPassword(userDTO.getPassword());
         user.setBloodGroup(userDTO.getBloodGroup());
         user.setRole(userDTO.getRole());

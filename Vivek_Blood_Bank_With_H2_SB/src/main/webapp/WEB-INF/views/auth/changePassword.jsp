@@ -50,7 +50,7 @@
         <h2>Change Password Form</h2>
          <div style="color: red;">${name} you can change your password</div>
          <br>
-        <form action="changepassword/${id}" method="post">
+        <form action="/com/BloodBank/v1/auth/changepassword/${id}" method="post">
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" required minlength="6" value="${not empty param.password ? param.password : ''}"><br>
               <input type="submit" value="Change">

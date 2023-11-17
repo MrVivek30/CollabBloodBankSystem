@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 
-@RequestMapping("/auth")
+@RequestMapping("/com/BloodBank/v1/auth")
 @Controller
 public class AuthController {
     @Autowired
@@ -31,11 +31,13 @@ public class AuthController {
 
     @PostMapping("/signup")
     public String signup(@Valid UserDTO user, Model model) {
-        user.setAccountCreationDateTime(LocalDateTime.now());
+//        user.setAccountCreationDateTime(LocalDateTime.now());
         System.out.println(user);
         try {
             UserDTO savedUser = userService.signUp(user);
+            System.out.println("lemon------------------->>>>>>>>>>>>");
             model.addAttribute("message", "User registration successful for " + savedUser.getEmail() );
+            System.out.println("-==-=-=-=--------------");
             return "messagesRedirect/signupSuccess";
         } catch (UserException e) {
             model.addAttribute("error", e.getMessage());
@@ -88,7 +90,7 @@ public class AuthController {
 
         userService.changePassword(id,userdto.getPassword());
 
-        return "redirect:/auth/login";
+        return "redirect:/com/BloodBank/v1/auth/login";
     }
 
     @GetMapping("/logout")

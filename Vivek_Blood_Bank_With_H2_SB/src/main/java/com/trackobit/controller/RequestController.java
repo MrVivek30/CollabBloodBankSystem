@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@RequestMapping("/request")
+@RequestMapping("/com/BloodBank/v1/request")
 public class RequestController {
     @Autowired
     RequestService requestService;
@@ -75,6 +75,6 @@ public class RequestController {
      int uniqueId= (int) session.getAttribute("uniqueId");
         requestService.editRequest(uniqueId,editedRequest);
         System.out.println(editedRequest+" ===========> resubmit");
-        return "redirect:/user/history";
+        return "redirect:/com/BloodBank/v1/user/history";
     }
 }

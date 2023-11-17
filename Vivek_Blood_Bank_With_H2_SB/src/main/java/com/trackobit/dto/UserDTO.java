@@ -23,7 +23,7 @@ public class UserDTO {
     @Pattern(regexp = "^[A-Za-z]+$", message = "Invalid last name. Last name should contain only alphabets.")
     private String lastName;
 
-    @Past(message = "Date of birth must be in the past")
+
     private String dob;
 
     @Email(message = "Invalid email address. Please enter a valid email address.")
@@ -38,8 +38,8 @@ public class UserDTO {
     @NotBlank(message = "Role is required")
     private String role;
 
-    @NotNull(message = "Account creation date and time cannot be null")
-    private LocalDateTime accountCreationDateTime;
+
+    private LocalDateTime accountCreationDateTime=LocalDateTime.now();
 
     @NotBlank(message = "Address is required")
     private String address;

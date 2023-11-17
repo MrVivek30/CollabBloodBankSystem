@@ -32,8 +32,22 @@ public class UserActivityLogger implements HandlerInterceptor {
     private UserActivityDTO extractUserActivityFromRequest(HttpServletRequest request) {
         UserActivityDTO userActivityDTO = new UserActivityDTO();
         // Extract necessary details from the request to populate userActivityDTO
-        // For example: userActivityDTO.setUserEmail(...), userActivityDTO.setIpAddress(...), etc.
+//        userActivityDTO.setUserEmail(); // Set user email
+        userActivityDTO.setIpAddress(getClientIp(request)); // Set user IP address
+        // Add other necessary details
         return userActivityDTO;
     }
 
+    private String getClientIp(HttpServletRequest request) {
+        String remoteAddr = "";
+
+        if (request != null) {
+            remoteAddr = request.getHeader("X-FORWARDED-FOR");
+            if (remoteAddr == null || "".equals(remoteAddr)) {
+                remoteAddr = request.getRemoteAddr();
+            }
+        }
+
+        return remoteAddr;
+    }
 }

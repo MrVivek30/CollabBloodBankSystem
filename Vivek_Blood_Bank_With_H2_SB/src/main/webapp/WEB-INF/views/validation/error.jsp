@@ -51,7 +51,7 @@
          </br>
          <br>
 <a
-              <a href="/com/BloodBank/v1/index.jsp"  class="go-back-link">Home page</a>
+              <a href="/com/BloodBank/v1/index"  class="go-back-link">Home page</a>
     </div>
 </body>
 </html>

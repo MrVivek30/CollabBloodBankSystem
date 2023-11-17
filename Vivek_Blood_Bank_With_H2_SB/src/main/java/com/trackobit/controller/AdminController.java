@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/com/BloodBank/v1/admin")
 public class AdminController {
     @Autowired
     AdminService adminService;
@@ -92,28 +92,28 @@ public class AdminController {
     public String donateApproval(@PathVariable(value = "uniqueId") int uniqueId) {
         adminService.accepted(uniqueId);
         System.out.println(uniqueId + " from approval adminController");
-        return "redirect:/admin/getDonationList";
+        return "redirect:/com/BloodBank/v1/admin/getDonationList";
     }
 
     @GetMapping("/donateReject/{uniqueId}")
     public String donateDecline(@PathVariable(value = "uniqueId") int uniqueId) {
         adminService.rejected(uniqueId);
         System.out.println(uniqueId + " from approval adminController");
-        return "redirect:/admin/getDonationList";
+        return "redirect:/com/BloodBank/v1/admin/getDonationList";
     }
 
     @GetMapping("/receiveAccept/{uniqueId}")
     public String receiveApproval(@PathVariable(value = "uniqueId") int uniqueId) {
         adminService.accepted(uniqueId);
         System.out.println(uniqueId + " from approval adminController");
-        return "redirect:/admin/getReceiverList";
+        return "redirect:/com/BloodBank/v1/admin/getReceiverList";
     }
 
     @GetMapping("/receiveReject/{uniqueId}")
     public String receiveDecline(@PathVariable(value = "uniqueId") int uniqueId) {
         adminService.rejected(uniqueId);
         System.out.println(uniqueId + " from approval adminController");
-        return "redirect:/admin/getReceiverList";
+        return "redirect:/com/BloodBank/v1/admin/getReceiverList";
 
     }
 
@@ -134,12 +134,12 @@ public class AdminController {
     @PostMapping("/donateRemark")
     public String donateRemark(@RequestParam String donateRemark,@RequestParam int uniqueId, Model model){
         adminService.giveRemark(donateRemark,uniqueId);
-        return "redirect:/admin/getDonationList";
+        return "redirect:/com/BloodBank/v1/admin/getDonationList";
     } 
     @PostMapping("/receiveRemark")
     public String receiveRemark(@RequestParam String receiveRemark,@RequestParam int uniqueId, Model model){
         adminService.giveRemark(receiveRemark,uniqueId);
-        return "redirect:/admin/getReceiverList";
+        return "redirect:/com/BloodBank/v1/admin/getReceiverList";
     }
 
     @GetMapping("/bloodUnitsAndDonorsCountReport")
@@ -171,6 +171,6 @@ public class AdminController {
     @GetMapping("/unblock")
     public String unBlockUser(@RequestParam String id){
         adminService.unBlock(Integer.parseInt(id));
-        return "redirect:/admin/getAllUserList";
+        return "redirect:/com/BloodBank/v1/admin/getAllUserList";
     }
 }
